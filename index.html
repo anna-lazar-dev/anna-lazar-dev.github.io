@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Лазарь Анна | Начинающий разработчик</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+</head>
+<body>
+    <!-- Шапка -->
+    <header>
+        <div class="container">
+            <a href="/" class="logo">[LA]</a> <!-- Твои инициалы -->
+            <nav>
+                <a href="/" class="active">Главная</a>
+                <a href="skills.html">Навыки</a>
+                <a href="#contacts">Контакты</a>
+            </nav>
+            <button id="theme-toggle" class="theme-toggle" aria-label="Переключить тему">
+                <div class="theme-toggle-inner">
+                    <span class="theme-icon sun">☀️</span>
+                    <span class="theme-icon moon">🌙</span>
+                    <span class="theme-slider"></span>
+                </div>
+                <span class="theme-text">Тема</span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Основной контент -->
+    <main>
+        <section class="hero">
+            <div class="container">
+                <!-- Вариант 1: Иконка-аватар -->
+                <div class="avatar">Dev</div>
+                
+                <!-- Вариант 2: Текстовое приветствие -->
+                <h1>Привет, я [Анна]</h1>
+                <p class="tagline">Начинающий веб-разработчик · Люблю чистый код · Учусь каждый день</p>
+                
+                <div class="terminal">
+                    <div class="terminal-header">
+                        <span class="dot red"></span>
+                        <span class="dot yellow"></span>
+                        <span class="dot green"></span>
+                        <span class="title">about_me.js</span>
+                    </div>
+                    <div class="terminal-body">
+                        <p><span class="prompt">$</span> whoami</p>
+                        <p>> Начинающий разработчик с фокусом на фронтенд</p>
+                        <p><span class="prompt">$</span> find /интересы -name "увлечения"</p>
+                        <p>> веб-разработка, открытый исходный код, пет-проекты</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Обо мне -->
+        <section class="about">
+            <div class="container">
+                <h2>Немного обо мне</h2>
+                <p>В данный момент активно изучаю веб-разработку. Уже освоила Python, C++, HTML, CSS, базовый JavaScript и Git. Сделала три пет-проекта, которые можно увидеть на странице навыков.</p>
+                <p>Ищу возможности для роста и первого коммерческого опыта.</p>
+            </div>
+        </section>
+
+        <!-- Контакты и форма -->
+        <section id="contacts" class="contacts">
+            <div class="container">
+                <h2>Свяжись со мной</h2>
+                
+                <div class="contact-wrapper">
+                    <!-- Соцсети -->
+                    <div class="social">
+                        <h3>Мои профили</h3>
+                        <div class="social-links">
+                            <a href="https://github.com/anna-lazar-dev" target="_blank" class="github">
+                                GitHub
+                            </a>
+                            <a href="https://t.me/Lazar_Ani" target="_blank" class="telegram">
+                                Telegram
+                            </a>
+                            <a href="mailto:anna.siberia.pro@gmail.com" class="email">
+                                Email
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Форма обратной связи -->
+                    <div class="form-container">
+                        <h3>Форма обратной связи</h3>
+                        <form id="feedback-form" action="https://formspree.io/f/твой-id" method="POST">
+                            <input type="text" name="name" placeholder="Ваше имя" required>
+                            <input type="email" name="email" placeholder="Ваш email" required>
+                            <textarea name="message" placeholder="Сообщение..." rows="5" required></textarea>
+                            <button type="submit">Отправить</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Подвал -->
+    <footer>
+        <div class="container">
+            <p>© [2026] [Лазарь Анна]. Все права на код защищены <span class="heart">♥</span></p>
+            <p>Сайт выложен на <a href="https://github.com/твой-ник/репозиторий" target="_blank">GitHub Pages</a></p>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+    <!-- Временный скрипт для проверки -->
+    <script>
+        console.log("Страница загружена!");
+        
+        const toggle = document.getElementById('theme-toggle');
+        if (toggle) {
+            console.log("✅ Кнопка темы найдена");
+            
+            // Восстановление темы
+            if (localStorage.getItem('theme') === 'dark') {
+                document.body.classList.add('dark-theme');
+                console.log("Восстановлена темная тема");
+            }
+            
+            // Клик по кнопке
+            toggle.addEventListener('click', function() {
+                console.log("🎯 Кнопка нажата!");
+                const isDark = document.body.classList.toggle('dark-theme');
+                localStorage.setItem('theme', isDark ? 'dark' : 'light');
+                console.log("Тема изменена на:", isDark ? 'темная' : 'светлая');
+            });
+        } else {
+            console.error("❌ Кнопка темы НЕ найдена!");
+        }
+    </script>
+</body>
+</html>

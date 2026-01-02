@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>404 | Потерялся в коде</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .game-container {
+            margin: 2rem auto;
+            width: 300px;
+            height: 200px;
+            background: #1a1a1a;
+            position: relative;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        
+        #player {
+            width: 20px;
+            height: 20px;
+            background: #00ff00;
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            border-radius: 50%;
+        }
+        
+        #home {
+            width: 40px;
+            height: 40px;
+            background: #2563eb;
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 0.8rem;
+        }
+        
+        .game-instructions {
+            font-size: 0.9rem;
+            color: #666;
+            margin-top: 1rem;
+        }
+        
+        .hidden-message {
+            opacity: 0;
+            transition: opacity 0.5s;
+            margin-top: 2rem;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <a href="/" class="logo">[YA]</a>
+            <nav>
+                <a href="/">Главная</a>
+                <a href="skills.html">Навыки</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero" style="min-height: 70vh;">
+            <div class="container">
+                <h1 style="font-size: 4rem;">404</h1>
+                <p>Страница не найдена. Но раз уж ты здесь...</p>
+                
+                <div class="game-container">
+                    <div id="player"></div>
+                    <div id="home">🏠</div>
+                </div>
+                
+                <p class="game-instructions">
+                    Управляй зелёным шариком (WSAD или стрелки) и доведи его до дома!
+                </p>
+                
+                <div class="hidden-message" id="secret">
+                    <h3>🎉 Поздравляю! Ты нашёл пасхалку!</h3>
+                    <p><code>console.log('Настоящие разработчики всегда проверяют консоль!');</code></p>
+                </div>
+                
+                <a href="/" class="button" style="margin-top: 2rem; display: inline-block;">
+                    ← Вернуться на главную
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        // Простая игра-пасхалка
+        const player = document.getElementById('player');
+        const home = document.getElementById('home');
+        const secret = document.getElementById('secret');
+        
+        let posX = 10, posY = 10;
+        const step = 10;
+        
+        document.addEventListener('keydown', (e) => {
+            switch(e.key) {
+                case 'ArrowUp':
+                case 'w': posY = Math.max(10, posY - step); break;
+                case 'ArrowDown':
+                case 's': posY = Math.min(170, posY + step); break;
+                case 'ArrowLeft':
+                case 'a': posX = Math.max(10, posX - step); break;
+                case 'ArrowRight':
+                case 'd': posX = Math.min(270, posX + step); break;
+            }
+            
+            player.style.left = posX + 'px';
+            player.style.top = posY + 'px';
+            
+            // Проверка достижения дома
+            const homeRect = home.getBoundingClientRect();
+            const playerRect = player.getBoundingClientRect();
+            
+            if (
+                playerRect.left < homeRect.right &&
+                playerRect.right > homeRect.left &&
+                playerRect.top < homeRect.bottom &&
+                playerRect.bottom > homeRect.top
+            ) {
+                secret.style.opacity = 1;
+                console.log('Настоящие разработчики всегда проверяют консоль!');
+            }
+        });
+        
+        // Секретное сообщение в консоли
+        console.log('%c🚀 Пасхалка активирована!', 'color: #2563eb; font-size: 16px; font-weight: bold;');
+        console.log('Попробуй добраться зелёным шариком до дома на странице 404!');
+    </script>
+</body>
+</html>
