@@ -1,37 +1,41 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Лазарь Анна | Начинающий разработчик</title>
+    <title>Anna Lazar | Junior Developer</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
 </head>
 <body>
     <!-- Шапка -->
     <header>
-        <div class="container">
-            <a href="/" class="logo">[LA]</a> <!-- Твои инициалы -->
-            <nav>
-                <a href="/" class="active">Главная</a>
-                <a href="skills.html">Навыки</a>
-                <a href="#contacts">Контакты</a>
+  <div class="container">
+    <a href="index-en.html" class="logo">[LA]</a>
 
-                <span class="lang-switch">
-  <a href="index.html" class="lang active-lang">RU</a>
-  <a href="index-en.html" class="lang">EN</a>
-</span>
-            </nav>
-            <button id="theme-toggle" class="theme-toggle" aria-label="Переключить тему">
-                <div class="theme-toggle-inner">
-                    <span class="theme-icon sun">☀️</span>
-                    <span class="theme-icon moon">🌙</span>
-                    <span class="theme-slider"></span>
-                </div>
-                <span class="theme-text">Тема</span>
-            </button>
-        </div>
-    </header>
+    <nav>
+      <a href="index-en.html" class="active">Home</a>
+      <a href="skills-en.html">Skills</a>
+      <a href="#contacts">Contacts</a>
+
+      <span class="lang-switch">
+        <a href="index.html" class="lang">RU</a>
+        <a href="index-en.html" class="lang active-lang">EN</a>
+      </span>
+    </nav>
+
+    <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">
+      <div class="theme-toggle-inner">
+        <span class="theme-icon sun">☀️</span>
+        <span class="theme-icon moon">🌙</span>
+        <span class="theme-slider"></span>
+      </div>
+      <span class="theme-text">Theme</span>
+    </button>
+  </div>
+</header>
+
+
 
     <!-- Основной контент -->
     <main>
@@ -41,8 +45,8 @@
                 <div class="avatar">Dev</div>
                 
                 <!-- Вариант 2: Текстовое приветствие -->
-                <h1>Привет, я [Анна]</h1>
-                <p class="tagline">Начинающий веб-разработчик · Люблю чистый код · Учусь каждый день</p>
+                <h1>Hi, I’m [Anna]</h1>
+                <p class="tagline">Junior developer · I love clean code · Learning every day</p>
                 
                 <div class="terminal">
                     <div class="terminal-header">
@@ -53,9 +57,9 @@
                     </div>
                     <div class="terminal-body">
                         <p><span class="prompt">$</span> whoami</p>
-                        <p>> Начинающий разработчик с фокусом на фронтенд</p>
-                        <p><span class="prompt">$</span> find /интересы -name "увлечения"</p>
-                        <p>> веб-разработка, открытый исходный код, пет-проекты</p>
+                        <p>> Junior developer focused on web development</p>
+                        <p><span class="prompt">$</span> find /interests -name "topics"</p>
+                        <p>> web development, open source, pet projects</p>
                     </div>
                 </div>
             </div>
@@ -64,21 +68,25 @@
         <!-- Обо мне -->
         <section class="about">
             <div class="container">
-                <h2>Немного обо мне</h2>
-                <p>В данный момент активно изучаю веб-разработку. Уже освоила Python, C++, HTML, CSS, базовый JavaScript и Git. Сделала три пет-проекта, которые можно увидеть на странице навыков.</p>
-                <p>Ищу возможности для роста и первого коммерческого опыта.</p>
-            </div>
+    <h2>About me</h2>
+    <p> I’m actively learning web development. I’ve already worked with Python, C++, HTML, CSS,
+      basic JavaScript and Git. I built three pet projects — you can find them on the Skills page.
+    </p>
+    <p>
+      I’m looking for an internship or a junior role to gain my first commercial experience.
+    </p>
+  </div>
         </section>
 
         <!-- Контакты и форма -->
         <section id="contacts" class="contacts">
             <div class="container">
-                <h2>Свяжись со мной</h2>
+                <h2>Contact me</h2>
                 
                 <div class="contact-wrapper">
                     <!-- Соцсети -->
                     <div class="social">
-                        <h3>Мои профили</h3>
+                        <h3>My profiles</h3>
                         <div class="social-links">
                             <a href="https://github.com/anna-lazar-dev" target="_blank" class="github">
                                 GitHub
@@ -94,12 +102,12 @@
 
                     <!-- Форма обратной связи -->
                     <div class="form-container">
-                        <h3>Форма обратной связи</h3>
+                        <h3>Contact form</h3>
                         <form id="feedback-form" action="https://formspree.io/f/твой-id" method="POST">
-                            <input type="text" name="name" placeholder="Ваше имя" required>
-                            <input type="email" name="email" placeholder="Ваш email" required>
-                            <textarea name="message" placeholder="Сообщение..." rows="5" required></textarea>
-                            <button type="submit">Отправить</button>
+                            <input type="text" name="name" placeholder="Your name" required>
+                            <input type="email" name="email" placeholder="Your email" required>
+                            <textarea name="message" placeholder="Message..." rows="5" required></textarea>
+                            <button type="submit">Send</button>
                         </form>
                     </div>
                 </div>
@@ -110,9 +118,14 @@
     <!-- Подвал -->
     <footer>
         <div class="container">
-            <p>© [2026] [Лазарь Анна]. Все права на код защищены <span class="heart">♥</span></p>
-            <p>Сайт выложен на <a href="https://github.com/твой-ник/репозиторий" target="_blank">GitHub Pages</a></p>
-        </div>
+    <p>© 2026 Anna Lazar. All rights reserved <span class="heart">♥</span></p>
+    <p>
+      Website hosted on
+      <a href="https://github.com/anna-lazar-dev/anna-lazar-dev.github.io" target="_blank">
+        GitHub Pages
+      </a>
+    </p>
+  </div>
     </footer>
 
     <script src="js/script.js"></script>
