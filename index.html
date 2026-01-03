@@ -11,16 +11,16 @@
     <!-- Шапка -->
     <header>
         <div class="container">
-            <a href="/" class="logo">[LA]</a> <!-- Твои инициалы -->
+            <a href="index.html" class="logo">[LA]</a> <!-- Твои инициалы -->
             <nav>
                 <a href="/" class="active">Главная</a>
                 <a href="skills.html">Навыки</a>
                 <a href="#contacts">Контакты</a>
 
                 <span class="lang-switch">
-  <a href="index.html" class="lang active-lang">RU</a>
-  <a href="index-en.html" class="lang">EN</a>
-</span>
+                    <a href="index.html" class="lang active-lang">RU</a>
+                    <a href="index-en.html" class="lang">EN</a>
+                </span>
             </nav>
             <button id="theme-toggle" class="theme-toggle" aria-label="Переключить тему">
                 <div class="theme-toggle-inner">
@@ -95,12 +95,16 @@
                     <!-- Форма обратной связи -->
                     <div class="form-container">
                         <h3>Форма обратной связи</h3>
-                        <form id="feedback-form" action="https://formspree.io/f/твой-id" method="POST">
-                            <input type="text" name="name" placeholder="Ваше имя" required>
-                            <input type="email" name="email" placeholder="Ваш email" required>
-                            <textarea name="message" placeholder="Сообщение..." rows="5" required></textarea>
+                        <form id="feedback-form" action="https://formspree.io/f/mvzgbqyq" method="POST">
+                            <input type="hidden" name="_subject" value="New message from Anna Lazar portfolio (RU)">
+                            <input type="hidden" name="_template" value="table">
+
+                            <input type="text" name="name" placeholder="Your name" required>
+                            <input type="email" name="email" placeholder="Your email" required>
+                            <textarea name="message" placeholder="Message..." rows="5" required></textarea>
                             <button type="submit">Отправить</button>
                         </form>
+
                     </div>
                 </div>
             </div>
