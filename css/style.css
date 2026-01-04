@@ -473,3 +473,31 @@ body.dark-theme {
   border-color: #60a5fa;
   color: #0a0a0a;
 }
+
+.avatar-logo {
+  background: none;
+}
+
+.avatar-logo img {
+  width: 140px;
+  height: auto;
+  filter: drop-shadow(0 10px 25px rgba(0,0,0,0.15));
+}
+
+.avatar.avatar-logo {
+  background: #ffffff;      /* фон под логотип */
+  width: 180px;             /* увеличим контейнер */
+  height: 180px;
+  border-radius: 20px;      /* мягкие углы */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+}
+
+.avatar.avatar-logo img {
+  width: 160px;
+  height: auto;
+  display: block;
+}
+
